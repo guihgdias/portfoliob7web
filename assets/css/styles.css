@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Variables */
+:root {
+  --main-color: #1A3A67;
+  --main-color-light: #2a5186;
+  --white: #FFFFFF;
+  
+  --main-padding: 20px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--main-padding);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.main-header .logo {
+  font-size: 23px;
+  font-weight: bold;
+  user-select: none;
+  color: var(--white);
+}
+
+.main-hamburguer {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;  
+}
+.main-hamburguer .line {
+  height: 2.5px;
+  width: 100%;
+  background: var(--main-color);
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.leftside {
+  flex: 1;
+  background: rgb(26,58,103);
+  background: linear-gradient(225deg, rgba(26,58,103,1) 0%, rgba(10,36,73,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftside .infos {
+  color: var(--white);
+  font-weight: bold;
+  padding: var(--main-padding);
+}
+.leftside .infos .job {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.leftside .infos .name {
+  font-size: 80px;
+  margin: 0 0 30px 0;
+}
+.leftside .infos .buttons {
+  box-shadow: 0px 20px 20px 0px #00000020;
+  display: inline-block;
+}
+.leftside .infos .buttons .button {
+  display: inline-block;
+  background: var(--white);
+  padding: 20px 40px;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 150ms linear;
+  margin-right: 3px;
+  box-shadow: 0px -5px 20px 0px transparent;
+}
+.leftside .infos .buttons .button:hover {
+  box-shadow: 0px -5px 20px 0px #00000030;
+}
+.leftside .infos .buttons .button.light {
+  background: var(--main-color-light);
+  color: var(--white);
+}
+
+.rightside {
+  flex: 1;
+  background-image: url('../images/photo1.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.main-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--main-padding);
+  color: var(--white);
+  text-shadow: 0 0 10px #000;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main-hamburguer .line {
+    background: var(--white);
+  }
+
+  .leftside {
+    flex: none;
+    text-align: center;
+    padding: 71px 20px 50px 20px;
+  }
+  .leftside .infos .job {
+    font-size: 15px;
+  }
+  .leftside .infos .name {
+    font-size: 75px;
+    margin: 0 0 10px 0;
+  }
+  .leftside .infos .buttons .button {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 450px) {
+  .leftside .infos .job {
+    font-size: 13px;
+  }
+  .leftside .infos .name {
+    font-size: 60px;
+    margin: 0 0 10px 0;
+  }
+  .leftside .infos .buttons .button {
+    font-size: 12px;
+  }
+  .leftside .infos .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftside .infos .buttons .button {
+    margin: 0 0 5px 0;
+  }
+}
